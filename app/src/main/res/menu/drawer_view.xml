@@ -3,18 +3,23 @@
 
     <group android:checkableBehavior="single" android:id="@+id/main_menu">
         <item
+            android:id="@+id/nav_tournament"
+            android:icon="@drawable/ic_games_black_24dp"
+            android:title="@string/nav_tournament"/>
+        <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_list_black_24dp"
             android:title="@string/string_history"/>
         <item
             android:id="@+id/nav_statistics"
-            android:icon="@drawable/ic_list_black_24dp"
+            android:icon="@drawable/ic_format_align_top_black_24dp"
             android:title="@string/string_statistics"/>
     </group>
+
     <group android:checkableBehavior="single" android:id="@+id/sub_menu">
         <item
             android:id="@+id/nav_options"
-            android:icon="@drawable/ic_list_black_24dp"
+            android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/string_options"
             />
     </group>
