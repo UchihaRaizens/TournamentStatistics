@@ -1,5 +1,6 @@
 package com.example.uchiha.tournamentstatistics;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -30,11 +31,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerToogle = setupDrawerToogle();
         // Find our drawer view
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
 
+        mDrawer.addDrawerListener(drawerToogle);
+
         // Setup drawer view
         setupDrawerContent(nvDrawer);
+    }
+
+    private  ActionBarDrawerToggle setupDrawerToogle() {
+        return new ActionBarDrawerToggle(this,mDrawer,toolbar,R.string.drawer_open,R.string.drawer_close);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -91,9 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                mDrawer.openDrawer(GravityCompat.START);
+        if(drawerToogle.onOptionsItemSelected(item)){
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -101,5 +108,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+        drawerToogle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        //pass configuration to change drawer toggles
+        drawerToogle.onConfigurationChanged(newConfig);
     }
 }
