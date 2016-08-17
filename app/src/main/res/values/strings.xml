@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TournamentStatistics</string>
+    <string name="string_history">History</string>
+    <string name="string_statistics">Statistics</string>
+    <string name="string_options">Options</string>
+    <string name="string_menu">Menu</string>
+</resources>
