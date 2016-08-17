@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <group android:checkableBehavior="single" >
+    <group android:checkableBehavior="single" android:id="@+id/main_menu">
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_list_black_24dp"
@@ -11,16 +11,11 @@
             android:icon="@drawable/ic_list_black_24dp"
             android:title="@string/string_statistics"/>
     </group>
-
-    <item android:title="">
-        <menu>
-            <group>
-                <item
-                    android:id="@+id/nav_options"
-                    android:icon="@drawable/ic_list_black_24dp"
-                    android:title="@string/string_options"
-                    />
-            </group>
-        </menu>
-    </item>
+    <group android:checkableBehavior="single" android:id="@+id/sub_menu">
+        <item
+            android:id="@+id/nav_options"
+            android:icon="@drawable/ic_list_black_24dp"
+            android:title="@string/string_options"
+            />
+    </group>
 </menu>
